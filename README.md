@@ -1,10 +1,6 @@
-NAME: Mnemosyne
-
-TEAM: Pranava-Frontend and proffessional copy-paster,
-      Baani- Charts and documentation expert, half time abandoned,
-      Vyomesh- Backend and OpenCV AI-screen,
-      Akshara- Charts and robot physical modeller,
-      Saanvi- AI Backend feed-AI,
-
-GOAL: SPEECH TO SIGN AND SIGN TO TEXT (SP-SI,SI-TX)
-
+Mnemosyne: a voice-sign and sign-text machine project,
+Usage: Github,VS Code,Kaggle,Gradio,huggingface(whisper),Canva(logo&ppt)
+Memebers:Pranava-VOICE.SIGN
+         Vyomesh-VOICE.SIGN,LOGO
+         Saanvi-SIGN.TEXT
+      
