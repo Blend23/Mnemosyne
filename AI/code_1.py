@@ -1,0 +1,25 @@
+import gradio as gr
+from transformers import pipeline
+import numpy as np
+import os
+path = "/Users/vyomesh/AI/expo/signlang2" 
+os.makedirs(path, exist_ok=True)
+
+transcriber = pipeline("automatic-speech-recognition", model="openai/whisper-base.en")
+
+def transcribe(audio):
+    sr, y = audio
+    y = y.astype(np.float32)
+    y /= np.max(np.abs(y))
+    text = transcriber({"sampling_rate": sr, "raw": y})["text"]
+    images = [f'/Users/vyomesh/AI/signlang2/{c}.png' for c in text.lower() if c.isalpha()]
+    return gr.Gallery(images, label='images',object_fit='scale-down',min_width=10, rows = 7, columns = 5)
+
+
+demo = gr.Interface(
+    transcribe,
+    gr.Audio(sources=["microphone"]),
+    "gallery"
+)
+
+demo.launch()
