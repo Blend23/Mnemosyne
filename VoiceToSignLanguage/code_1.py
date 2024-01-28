@@ -15,11 +15,6 @@ def transcribe(audio):
     images = [f'/Users/vyomesh/AI/signlanguage/{c}.png' for c in text.lower() if c.isalpha()]
     return gr.Gallery(images, label='images',object_fit='scale-down',min_width=50, rows = 3, columns = 5)
 
-
-demo = gr.Interface(
-    transcribe,
-    gr.Audio(sources=["microphone"]),
-    "gallery"
+demo =interface = gr.Interface(transcribe, gr.Audio(sources=["microphone"]), "gallery", theme="Taithrah/Minimal",)
 )
-
 demo.launch()
