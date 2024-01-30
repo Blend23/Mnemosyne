@@ -16,5 +16,5 @@ def transcribe(audio):
     return gr.Gallery(images, label='images',object_fit='scale-down',min_width=50, rows = 3, columns = 5)
 
 demo =interface = gr.Interface(transcribe, gr.Audio(sources=["microphone"]), "gallery", theme="Taithrah/Minimal",)
-)
+
 demo.launch()
